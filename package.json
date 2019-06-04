@@ -1,0 +1,28 @@
+{
+  "name": "eiqula",
+  "version": "1.0.0",
+  "description": "Web Escuela de Ingenieria Quimica - ULA",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonwilm/eiqula.git"
+  },
+  "author": "Jonathan Paredes (@Jonwilm84)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonwilm/eiqula/issues"
+  },
+  "homepage": "https://github.com/jonwilm/eiqula#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-html-import": "0.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
+}
