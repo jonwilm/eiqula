@@ -22,7 +22,7 @@ gulp.task('styles', function(){
     .pipe(gulp.dest('./site/public/css/'));
 });
 
-gulp.task('scripts', function{
+gulp.task('scripts', function(){
   gulp.src('./src/public/js/*.js')
     .pipe(gulpConcat('scripts.js'))
     .pipe(gulp.dest('./site/public/js/'))
