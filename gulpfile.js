@@ -1,10 +1,10 @@
-var gulp = require('gulp');
-var gulpHtmlImport = require('gulp-html-import');
-var gulpHtmlMin = require('gulp-htmlmin');
-var gulpSass = require('gulp-sass');
-var gulpCssNano = require('gulp-cssnano');
-var gulpConcat = require('gulp-concat');
-var gulpUglify = require('gulp-uglify');
+var gulp = require('gulp')
+var gulpHtmlImport = require('gulp-html-import')
+var gulpHtmlMin = require('gulp-htmlmin')
+var gulpSass = require('gulp-sass')
+var gulpCssNano = require('gulp-cssnano')
+var gulpConcat = require('gulp-concat')
+var gulpUglify = require('gulp-uglify')
 
 gulp.task('html', function(){
   gulp.src('./src/html/*.html')
@@ -12,20 +12,31 @@ gulp.task('html', function(){
     .pipe(gulpHtmlMin({
       collapseWhitespace: true
     }))
-    .pipe(gulp.dest('./site/'));
-});
+    .pipe(gulp.dest('./site/'))
+})
 
 gulp.task('styles', function(){
   gulp.src('./src/public/scss/styles.scss')
     .pipe(gulpSass(''))
     .pipe(gulpCssNano(''))
-    .pipe(gulp.dest('./site/public/css/'));
-});
+    .pipe(gulp.dest('./site/public/css/'))
+})
 
 gulp.task('scripts', function(){
   gulp.src('./src/public/js/*.js')
     .pipe(gulpConcat('scripts.js'))
     .pipe(gulp.dest('./site/public/js/'))
-});
+})
 
-gulp.task('default', ['html', 'styles', 'scripts']);
+gulp.task('images', function() {
+  gulp.src('./src/public/img/*')
+    .pipe(gulp.dest('./site/public/img/'))
+})
+
+gulp.task('default', ['html', 'styles', 'scripts', 'images'])
+
+gulp.task('watch', function(){
+  gulp.watch(['./src/html/*.html'], ['html'])
+  gulp.watch(['./src/public/scss/styles.scss'], ['styles'])
+  gulp.watch(['./src/public/js/*.js'], ['scripts'])
+})
