@@ -8,12 +8,24 @@ var gulpUglify = require('gulp-uglify');
 
 gulp.task('html', function(){
   gulp.src('./src/html/*.html')
+    .pipe(gulpHtmlImport('./src/html/partials/'))
     .pipe(gulpHtmlMin({
       collapseWhitespace: true
     }))
     .pipe(gulp.dest('./site/'));
 });
 
+gulp.task('styles', function(){
+  gulp.src('./src/public/scss/styles.scss')
+    .pipe(gulpSass(''))
+    .pipe(gulpCssNano(''))
+    .pipe(gulp.dest('./site/public/css/'));
+});
 
+gulp.task('scripts', function{
+  gulp.src('./src/public/js/*.js')
+    .pipe(gulpConcat('scripts.js'))
+    .pipe(gulp.dest('./site/public/js/'))
+});
 
-gulp.task('default', ['html']);
+gulp.task('default', ['html', 'styles', 'scripts']);
