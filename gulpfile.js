@@ -25,6 +25,7 @@ gulp.task('styles', function(){
 gulp.task('scripts', function(){
   gulp.src('./src/public/js/*.js')
     .pipe(gulpConcat('scripts.js'))
+    .pipe(gulpUglify(''))
     .pipe(gulp.dest('./site/public/js/'))
 })
 
