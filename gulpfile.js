@@ -37,7 +37,7 @@ gulp.task('images', function() {
 gulp.task('default', ['html', 'styles', 'scripts', 'images'])
 
 gulp.task('watch', function(){
-  gulp.watch(['./src/html/*.html', './src/html/partials/*.html'], ['html'])
-  gulp.watch(['./src/public/scss/styles.scss'], ['styles'])
-  gulp.watch(['./src/public/js/*.js'], ['scripts'])
+  gulp.watch(['./src/html/**/*'], ['html'])
+  gulp.watch(['./src/public/scss/**/*.scss'], ['styles'])
+  gulp.watch(['./src/public/js/*'], ['scripts'])
 })
