@@ -1,3 +1,14 @@
 body{
   font-family: 'Roboto', sans-serif;
 }
+
+nav{
+  .navbar-brand{
+    @include media-breakpoint-up(lg) {
+      max-width: 30%;
+    }
+    @include media-breakpoint-down(md) {
+      max-width: 50%;
+    }
+  }
+}
