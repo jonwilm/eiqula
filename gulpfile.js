@@ -30,7 +30,7 @@ gulp.task('scripts', function(){
 })
 
 gulp.task('images', function() {
-  gulp.src('./src/public/img/*')
+  gulp.src('./src/public/img/*/**')
     .pipe(gulp.dest('./site/public/img/'))
 })
 
