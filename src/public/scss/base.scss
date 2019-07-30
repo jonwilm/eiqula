@@ -1,6 +1,10 @@
 body{
   font-family: 'Roboto', sans-serif;
 
+  p{
+    @include responsive-font-size(16px, true);
+  }
+
   .dropdown-menu-primary{
     background-color: #000033;
   }
