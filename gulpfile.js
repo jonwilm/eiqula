@@ -29,12 +29,17 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('./site/public/js/'))
 })
 
+gulp.task('fonts', function(){
+  gulp.src('./src/public/fonts/*')
+    .pipe(gulp.dest('./site/public/fonts/'))
+})
+
 gulp.task('images', function() {
   gulp.src('./src/public/img/*/**')
     .pipe(gulp.dest('./site/public/img/'))
 })
 
-gulp.task('default', ['html', 'styles', 'scripts', 'images'])
+gulp.task('default', ['html', 'styles', 'scripts', 'fonts', 'images'])
 
 gulp.task('watch', function(){
   gulp.watch(['./src/html/**/*'], ['html'])
